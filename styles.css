@@ -9,7 +9,7 @@ body {
 }
 
 .row {
-    width: 900px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -27,11 +27,13 @@ nav {
 
 .nav-row {
     height: 30px;
-    width: 900px;
+    max-width: 900px;
     margin: 0 auto;
+    padding: 7px;
     align-items: center;
     display: flex;
-    position: relative;
+    justify-content: space-between;
+    align-items: center;
 
 }
 
@@ -40,21 +42,21 @@ nav {
     
 }
 
-.nav-search {
+/* .nav-search {
     position: absolute;
     right: 40%;
     height: 24px;
-}
+} */
 
 .nav-input {
     height: 100%;
 }
 
-.nav-icons {
+/* .nav-icons {
     align-content: center;
     position: absolute;
-    right: 1px;
-}
+    right: 7px;
+} */
 
 .nav-icons ion-icon{
     margin-left: 15px;
@@ -80,14 +82,16 @@ nav {
 .main-row-left {
     width: 72%;
     float: left;
-    margin-right: 10px;
+    margin-right: 10px; 
 }
+
 
 .main-row-right{
     width: 25%;
     float: right;
     margin-top: 15px;
 }
+
 
 .clearfix {
     content: "";
@@ -105,23 +109,27 @@ nav {
     z-index: 3;
     border: 1px solid rgb(216, 216, 216);
     border-radius: 3px;
+    overflow-y: hidden;
+    display: block;
 }
 
 .story-content {
     margin-left: 10px;
     display: flex;
+    max-width: 100%;
+    overflow: auto;
 }
 
 .story-user {
     text-align: center;
-    margin: 10px 0px 10px 0px;
+    margin: 10px 10px 10px 0px;
     height: 80px;
     width: 80px;
 }
 
 .story-image {
-    height: 70%;
-    width: 70%;
+    height: 56px;
+    width: 56px;
     margin-top: 10px;
     border: 2px solid rgb(216, 216, 216);
     border-radius: 50%;
@@ -153,7 +161,7 @@ nav {
     text-align: center;
     margin: 10px 0px 10px 15px;
     height: 45px;
-    width: 500px;
+    width: 90%;
 }
 
 .post-user-image {
@@ -307,7 +315,7 @@ hr.horizontal-line-after-time {
 
 textarea {
     text-rendering: auto;
-    width: 400px;
+    width: 100%;
     height: 18px;
     color: -internal-light-dark(black, white);
     font: 400 13.3333px Arial;
@@ -377,4 +385,40 @@ footer{
 
 .copyright-text{
     margin-top: 20px;
+}
+
+
+
+
+
+/* ---------------------------
+         MEDIA QUERIES
+    ---------------------------------- */
+
+@media only screen and (max-width: 900px) {
+
+    .main-row-left {
+        width: 100%;
+    }
+
+    .main-row-right{
+        display: none;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 500px) {
+
+    .nav-search {
+        display: none;
+    }
+
+    .no-of-likes p, .username-and-caption a, .comment a, .caption-content,
+.comment-content, .no-of-comments a, .comment a {
+    font-size: 13px;
+    }
+
+
 }
